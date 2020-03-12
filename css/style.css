@@ -1,0 +1,163 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(68, 85, 106, 1);
+    font-family: 'arial', sans-serif;
+}
+
+.header {
+    position: relative;
+    height: 270px;
+    width: 850px;
+    background-image: url('../img/asd.jpg');
+    background-size: cover;
+    border-radius: 45px 45px 0 0;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.container {
+    padding: 10px;
+    margin: 0 auto;
+    width: 850px;
+
+}
+
+.content {
+    height: 580px;
+    max-height: 650px;
+    width: 850px;
+    background-color: #FFF;
+    overflow: auto;
+
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.content ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+#date {
+    position: absolute;
+    font-family: 'Oswald', sans-serif;
+    bottom: 40px;
+    left: 20px;
+    font-size: 35px;
+    color: rgb(55, 54, 52);
+
+}
+
+.todoproject {
+    position: absolute;
+    font-family: 'Oswald', sans-serif;
+    bottom: 120px;
+    right: 0px;
+    font-size: 50px;
+    color: rgb(55, 54, 52);
+    text-align: center;
+    width: 100%;
+
+
+}
+
+.item {
+    position: relative;
+    height: 65px;
+    min-height: 65px;
+    width: 850px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item i.co {
+    position: absolute;
+    font-size: 25px;
+    padding-left: 5px;
+    top: 25px;
+    left: 15px;
+
+}
+
+.item i.co:hover {
+    cursor: pointer;
+}
+
+.fa-check-circle {
+    color: rgba(0, 120, 0, 0.8);
+}
+
+.item p.text {
+    position: absolute;
+    max-width: 850px;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    top: 20px;
+    left: 50px;
+
+
+}
+
+.lineThrough {
+    color: #ccc;
+    text-decoration: line-through;
+
+}
+
+.item i.de {
+    position: absolute;
+    font-size: 30px;
+    top: 20px;
+    right: 25px;
+
+}
+
+.item i.de:hover {
+    color: red;
+    cursor: pointer;
+}
+
+
+.add-to-do {
+    position: relative;
+    width: 830px;
+    padding: 10px;
+    height: 35px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #FFF;
+    box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.15),
+        0 10px 0 -5px #eee,
+        0 10px 1px -4px rgba(0, 0, 0, 0.15),
+        0 20px 0 -10px #eee,
+        0 20px 1px -9px rgba(0, 0, 0, 0.15);
+
+}
+
+.add-to-do i {
+    position: absolute;
+    color: #41f6b1;
+    font-size: 40px;
+
+}
+
+.add-to-do input {
+    position: absolute;
+    font-size: 25px;
+    left: 50px;
+    width: 790px;
+    height: 35px;
+    background-color: transparent;
+    padding-left: 10px;
+    border: none;
+
+
+}
