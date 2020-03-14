@@ -46,7 +46,7 @@ body {
 #date {
     position: absolute;
     font-family: 'Oswald', sans-serif;
-    bottom: 40px;
+    bottom: 20px;
     left: 20px;
     font-size: 35px;
     color: rgb(55, 54, 52);
@@ -160,4 +160,23 @@ body {
     border: none;
 
 
+}
+
+.clear {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+}
+
+.clear i {
+    font-size: 40px;
+    color: rgb(242, 228, 187)
+}
+
+.clear i:hover {
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);
 }

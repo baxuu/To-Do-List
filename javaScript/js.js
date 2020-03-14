@@ -2,6 +2,8 @@
 const ElementDate = document.getElementById("date");
 const listId = document.getElementById("list");
 const input = document.getElementById("input");
+const clear = document.querySelector(".clear");
+
 
 // Class name
 const lineT = "lineThrough";
@@ -10,9 +12,34 @@ const uncheckIt = "fa-circle-thin";
 
 
 // Variables
-id = 0;
-let ToDoList = [];
+let ToDoList, id;
 
+
+let data = localStorage.getItem("toDoItem");
+
+// cheing if data is not empty
+if (data) {
+    ToDoList = JSON.parse(data);
+    id = ToDoList.length;
+    loadList(ToDoList);
+} else {
+
+    ToDoList = [];
+    id = 0;
+}
+
+// loading items to interface
+function loadList(array) {
+    array.forEach(function (item) {
+        addTask(item.name, item.id, item.done, item.bin);
+    });
+}
+
+// clearing  local storage
+clear.addEventListener("click", function () {
+    localStorage.clear();
+    location.reload();
+});
 
 // Todays date
 const option = {
@@ -25,7 +52,7 @@ const today = new Date();
 ElementDate.innerHTML = today.toLocaleDateString("en-US", option);
 
 
-// Function adding Task
+//  adding Task
 function addTask(task, id, done, bin) {
 
     if (bin) {
@@ -47,12 +74,11 @@ function addTask(task, id, done, bin) {
     listId.insertAdjacentHTML(position, item);
 }
 
-// Adding Item by enter
+// Adding item by enter
 document.addEventListener("keyup", function (even) {
     if (event.keyCode == 13) {
         const task = input.value;
 
-        // if the input isn't empty
         if (task) {
             addTask(task, id, false, false);
 
@@ -62,6 +88,7 @@ document.addEventListener("keyup", function (even) {
                 done: false,
                 bin: false
             });
+            localStorage.setItem("toDoItem", JSON.stringify(ToDoList));
             id++;
         }
         input.value = "";
@@ -75,7 +102,7 @@ function doneTasks(element) {
 
     ToDoList[element.id].done = ToDoList[element.id].done ? false : true;
 }
-// Removed Tasks
+// Removing Tasks
 function removeToDo(element) {
     element.parentNode.parentNode.removeChild(element.parentNode);
 
@@ -92,4 +119,6 @@ listId.addEventListener("click", function (event) {
     } else if (elementChoosen == "delete") {
         removeToDo(element);
     }
-})
+    // adding to localstorage 
+    localStorage.setItem("toDoItem", JSON.stringify(ToDoList));
+});
