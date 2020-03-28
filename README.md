@@ -1,6 +1,6 @@
 # My List of Things to Do
 
-This is a to-do list application.
+To-do list application. Using local storage so user's to-dos are saved and still there when the page is reopened.
 
 
 
